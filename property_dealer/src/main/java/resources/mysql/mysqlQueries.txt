@@ -1,0 +1,69 @@
+
+
+.
+
+mysql> create database student;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> 			
+Database changed
+mysql> create table stu
+     (Price int (20),
+    Place char (30),
+     Availablity char(70));
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> insert into stu values
+     (200000,"Pune","Yes"),
+     (600000,"Mumbai","Yes"),
+     (000,"Madhya Pradesh","No"),
+     (900000,"Bangalore","Yes"),
+     (1000000,"China","Yes"),
+    (1200000,"USA","Yes"),
+    (700000,"Singapore","No");
+Query OK, 7 rows affected (0.09 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> select * from stu values;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'value
+s' at line 1
+mysql> select * from stu values;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'value
+s' at line 1
+mysql> select * from stu ;
++---------+----------------+-------------+
+| Price   | Place          | Availablity |
++---------+----------------+-------------+
+|  200000 | Pune           | Yes         |
+|  600000 | Mumbai         | Yes         |
+|       0 | Madhya Pradesh | No          |
+|  900000 | Bangalore      | Yes         |
+| 1000000 | China          | Yes         |
+| 1200000 | USA            | Yes         |
+|  700000 | Singapore      | No          |
++---------+----------------+-------------+
+7 rows in set (0.00 sec)
+
+
+mysql> alter table stu
+     modify Place char(20) first;
+Query OK, 7 rows affected (0.11 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> select * from stu ;
++----------------+---------+-------------+
+| Place          | Price   | Availablity |
++----------------+---------+-------------+
+| Pune           |  200000 | Yes         |
+| Mumbai         |  600000 | Yes         |
+| Madhya Pradesh |       0 | No          |
+| Bangalore      |  900000 | Yes         |
+| China          | 1000000 | Yes         |
+| USA            | 1200000 | Yes         |
+| Singapore      |  700000 | No          |
++----------------+---------+-------------+
+7 rows in set (0.00 sec)
+
+mysql>
